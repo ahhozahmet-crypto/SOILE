@@ -1,0 +1,170 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+.chat{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    height:100vh;
+}
+
+/* Левая панель */
+
+.chat-list{
+    background:#1a1a1a;
+    border-right:1px solid #333;
+    padding:20px;
+}
+
+.chat-list h2{
+    margin-bottom:25px;
+}
+
+.user{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:15px;
+    cursor:pointer;
+    transition:.3s;
+    margin-bottom:10px;
+}
+
+.user:hover{
+    background:#2b2b2b;
+}
+
+.user.active{
+    background:#303030;
+}
+
+.avatar{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#fff,#777);
+}
+
+.user p{
+    color:#aaa;
+    font-size:14px;
+}
+
+/* Правая часть */
+
+.chat-window{
+    display:flex;
+    flex-direction:column;
+    background:#151515;
+}
+
+.chat-header{
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 25px;
+    border-bottom:1px solid #333;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+}
+
+.buttons button{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#2d2d2d;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+.buttons button:hover{
+    background:#444;
+}
+
+.messages{
+    flex:1;
+    overflow:auto;
+    padding:25px;
+}
+
+.message{
+    max-width:70%;
+    padding:15px 18px;
+    border-radius:18px;
+    margin-bottom:15px;
+    line-height:24px;
+}
+
+.left{
+    background:#2d2d2d;
+}
+
+.right{
+    background:white;
+    color:black;
+    margin-left:auto;
+}
+
+/* Поле ввода */
+
+.send-box{
+    display:flex;
+    gap:10px;
+    padding:20px;
+    border-top:1px solid #333;
+}
+
+.send-box input{
+    flex:1;
+    border:none;
+    border-radius:15px;
+    background:#2b2b2b;
+    color:white;
+    padding:15px;
+    font-size:16px;
+}
+
+.send-box input:focus{
+    outline:none;
+}
+
+.send-box button{
+    width:60px;
+    border:none;
+    border-radius:15px;
+    background:white;
+    color:black;
+    cursor:pointer;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* Телефон */
+
+@media(max-width:900px){
+
+.chat{
+    grid-template-columns:1fr;
+}
+
+.chat-list{
+    display:none;
+}
+
+}
